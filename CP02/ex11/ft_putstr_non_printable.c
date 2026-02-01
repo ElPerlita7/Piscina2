@@ -1,8 +1,6 @@
 
 #include <unistd.h>
 
-#include <unistd.h>
-
 void	ft_putstr_non_printable(char *str)
 {
 	char	*hex = "0123456789abcdef";
@@ -23,9 +21,8 @@ void	ft_putstr_non_printable(char *str)
 		str++;
 	}
 }
-
-int main()
-{
-	ft_putstr_non_printable("Coucou\ntu vas bien ?");
-}
+// int main()
+// {
+// 	ft_putstr_non_printable("Coucou\ntu vas bien ?");
+// }
 
