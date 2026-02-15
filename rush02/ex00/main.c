@@ -15,42 +15,15 @@ int	validate_number(char *str)
 	}
 	return (1);
 }
-char *read_line(int fd)
-{
-    char	*line;
-    char	c;
-    int	len;
-	int	ret_read;
-
-    line = malloc(1024); // tamaño máximo de línea
-    if (!line)
-        return NULL;
-
-    len = 0;
-	while ((ret_read = read(fd, &c, 1)) > 0)
-	{
-		if (c == '\n')
-			break;
-		line[len++] = c;
-	}
-
-	line[len] = '\0';
-
-    // Si llegamos al final del archivo sin leer nada
-    if (ret_read == 0 && len == 0)
-    {
-        free(line);
-        return NULL;
-    }
-
-	return line;
-}
 int	main(int argc, char **argv)
 {
 	char	*dict_file;
 	char	*number;
 	int 	fd;
-	char *line;
+	char	*line;
+	t_dict	dict[1000];
+	int	read_count = 0;
+	char	*value;
 
 	if (argc == 2)
 	{
@@ -82,14 +55,27 @@ if (fd < 0)
 }
 
 // leer y mostrar cada línea
-while ((line = read_line(fd)))
-{
-	write(1, line, ft_strlen(line)); // imprime la línea
-	write(1, "\n", 1);
-	free(line);
-}
+	while ((line = read_line(fd)))
+	{
+		if (read_count < 1000)
+			dict[read_count++] = parse_line(line);
+		free(line);
+	}
 
-close(fd);
+	close(fd);
+
+	value = find_value(number, dict, read_count);
+
+	if (value)
+	{
+		write(1, value, ft_strlen(value));
+		write(1, "\n", 1);
+	}
+	else
+	{
+		write(1, "Number not found in dictionary\n", 31);
+	}
+
 	return (0);
 }
 

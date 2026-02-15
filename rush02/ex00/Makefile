@@ -3,7 +3,7 @@ NAME = rush-02
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = main.c utils.c
+SRC = main.c utils.c parse.c
 
 OBJ = $(SRC:.c=.o)
 
