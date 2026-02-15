@@ -62,3 +62,18 @@ int ft_strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
+void	init_scales(t_number *struct_init)
+{
+	struct_init->scales[0]  = "";
+	struct_init->scales[1]  = "thousand";
+	struct_init->scales[2]  = "million";
+	struct_init->scales[3]  = "billion";
+	struct_init->scales[4]  = "trillion";
+	struct_init->scales[5]  = "quadrillion";
+	struct_init->scales[6]  = "quintillion";
+	struct_init->scales[7]  = "sextillion";
+	struct_init->scales[8]  = "septillion";
+	struct_init->scales[9]  = "octillion";
+	struct_init->scales[10] = "nonillion";
+	struct_init->scales[11] = "undecillion";
+}

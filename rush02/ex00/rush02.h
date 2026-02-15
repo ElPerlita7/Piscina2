@@ -22,6 +22,7 @@ typedef struct s_number
 	int	i;
 	int	j;
 	int	n;
+	char	*scales[12];
 } t_number;
 
 // utils.c
@@ -29,6 +30,7 @@ int	ft_strlen(char *str);
 char	*ft_strdup(char *src);
 char	*ft_strndup(char *src, int n);
 int	ft_strcmp(char *s1, char *s2);
+void	init_scales(t_number *struct_init);
 
 // parse_dic.c
 t_dict	parse_line(char *line);
@@ -45,7 +47,7 @@ void	free_dict(t_dict *dict, int count);
 void	print_number_basic(int num, t_dict *dict, int dict_count);
 void	print_number_under_100(int num, t_dict *dict, int dict_count);
 void	print_large_number(char *str, t_dict *dict, int dict_count);
-void	print_scale(int scale_len, t_dict *dict, int dict_count);
+void	print_scale(int scale_len, t_number *nbr);
 void	print_block(int num, t_dict *dict, int dict_count);
 
 #endif
