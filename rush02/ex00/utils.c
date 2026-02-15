@@ -16,7 +16,7 @@ char	*ft_strndup(char *src, int n)
 	char	*dup;
 	int	i;
 
-    if (!src || n <= 0)
+	if (!src || n <= 0)
 		return NULL;
 
 	dup = malloc(n + 1);

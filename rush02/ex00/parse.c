@@ -58,7 +58,9 @@ char *read_line(int fd)
 }
 char	*find_value(char *key, t_dict *dict, int read_count)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (i < read_count)
 	{
 		if (ft_strcmp(dict[i].key, key) == 0)
