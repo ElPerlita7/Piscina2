@@ -35,7 +35,7 @@ char *read_line(int fd)
 	int	len;
 	int	ret_read;
 
-	line = malloc(1024); // tamaño máximo de línea
+	line = malloc(1024);
 	if (!line)
 		return NULL;
 
@@ -48,7 +48,6 @@ char *read_line(int fd)
 	}
 	line[len] = '\0';
 
-    // Si llegamos al final del archivo sin leer nada
 	if (ret_read == 0 && len == 0)
 	{
 		free(line);

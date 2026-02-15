@@ -1,6 +1,5 @@
 #include "rush02.h"
 
-// imprime numeros del 0 -20
 void	print_number_basic(int num, t_dict *dict, int dict_count)
 {
 	t_number	nb;
@@ -27,7 +26,6 @@ void	print_number_basic(int num, t_dict *dict, int dict_count)
 		write(1, nb.value, ft_strlen(nb.value));
 }
 
-// imprime numeros por debajo del 100
 void	print_number_under_100(int num, t_dict *dict, int dict_count)
 {
 	int	tens;
